@@ -50,7 +50,7 @@ public class DartStockService implements StockService {
     private final ApiService dartJsonService;
     private final ApiService dartZipService;
 
-    private final String DART_KEY;
+ //   private final String DART_KEY;
     private final String CORP_CODE_URI;
     private final String CORP_INFO_URI;
     private final String CORP_DETAIL_URI;
@@ -86,7 +86,7 @@ public class DartStockService implements StockService {
         this.dartJsonService    = dartJsonService;
         this.dartZipService     = dartZipService;
 
-        this.DART_KEY           = environment.getProperty("dart.key");
+//        this.DART_KEY           = environment.getProperty("dart.key");
         this.CORP_CODE_URI      = environment.getProperty("dart.corpCode.uri");
         this.CORP_INFO_URI      = environment.getProperty("dart.corpInfo.uri");
         this.CORP_DETAIL_URI    = environment.getProperty("dart.corpDetail.uri");
@@ -100,8 +100,6 @@ public class DartStockService implements StockService {
     }
 
     public ResponseEntity<String> getReportUri() {
-        log.info("this.CORP_REPORT_URI:"+this.CORP_REPORT_URI);
-
         return new ResponseEntity<>(this.CORP_REPORT_URI, HttpStatus.OK);
     }
 
